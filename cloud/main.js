@@ -1,4 +1,5 @@
 require('cloud/app.js');
+const twilio = require("twilio");
 
 // Data Consistency
 
@@ -35,6 +36,16 @@ Parse.Cloud.afterSave("Message", function(request, response) {
       console.error('Request failed with response code ' + httpResponse.status);
     }
   });
+
+  // Include the Twilio Cloud Module and initialize it
+  twilio.initialize("ACdadc5e160dcf3b90e6ecdd1c0799c3ab","2f87472519ba1224f9376fdc0b1fb1c7");
+
+  twilio.sendSMS({
+    From: "+16503979734",
+    To: message.patron.phoneNumber,
+    Body: message.text
+  }
+
 });
 
 Parse.Cloud.afterSave("Patron", function(request, response) {

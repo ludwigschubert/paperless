@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PatronsList from './PatronsList.jsx';
-import PatronCard from './PatronCard.jsx';
+import PatronBody from './PatronBody.jsx';
 
 let Main = React.createClass({
 
@@ -18,7 +18,7 @@ let Main = React.createClass({
 
     var mainBody;
     if (selectedPatron) {
-      mainBody = <PatronCard patron={selectedPatron}/>
+      mainBody = <PatronBody patron={selectedPatron}/>
     } else {
       mainBody = <p>No Patron Selected</p>
     }

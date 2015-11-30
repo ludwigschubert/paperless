@@ -1,20 +1,13 @@
 import React from 'react';
-import Parse from 'parse';
-import ParseReact from 'parse-react';
-import { Row } from 'react-bootstrap';
-
-import MessagesList from './MessagesList.jsx';
-import PatronDetails from './PatronDetails.jsx';
+import { Col } from 'react-bootstrap';
 
 let PatronCard = React.createClass({
 
   render() {
-    const patron = this.props.patron;
     return(
-      <Row className='patron-card'>
-        <MessagesList patron={patron}/>
-        <PatronDetails patron={patron}/>
-      </Row>
+      <Col sm={6} className="patron-details">
+        {this.props.patron.name}s PATRON DETAILS
+      </Col>
     );
 
   }

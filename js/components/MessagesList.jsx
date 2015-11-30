@@ -36,9 +36,9 @@ let MessagesList = React.createClass({
 
   render() {
     return(
-      <Col sm={6} className="messages-list-container">
+      <Col sm={12} className="messages-list-container">
         {this.data.messages.map( function(message) {
-          return <Message key={message.objectId} message={message}/>;
+          return <Message key={message.objectId || "new"} message={message}/>;
         })}
       </Col>
     );
