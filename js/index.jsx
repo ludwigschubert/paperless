@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Router, { IndexRoute, Route, DefaultRoute, Link, RouteHandler } from 'react-router';
-
 import Parse from 'parse';
 
 import App from './components/App.jsx';

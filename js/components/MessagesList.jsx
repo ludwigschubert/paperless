@@ -5,7 +5,7 @@ let MessagesList = React.createClass({
   render() {
     return(
       <p>
-        THIS IS A MESSAGE LIST
+      {this.props.patron.name}s MESSAGES LIST
       </p>
     );
 

@@ -5,7 +5,7 @@ let PatronDetails = React.createClass({
   render() {
     return(
       <p>
-        THIS IS A PATRON DETAILS
+        {this.props.patron.name}s PATRON DETAILS
       </p>
     );
 

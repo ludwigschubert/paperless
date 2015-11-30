@@ -14,11 +14,14 @@ let PatronsList = React.createClass({
   },
 
   render() {
+    const callback = this.props.selectPatronCallback
     return(
       <div className='patrons-list-container'>
         <ul className='patrons-list'>
           {this.data.patrons.map(function(patron) {
-            return <PatronAvatar key={patron.objectId} patron={patron} />;
+            return <PatronAvatar key={patron.objectId}
+                                 patron={patron}
+                                 selectPatronCallback={callback} />;
           })}
         </ul>
       </div>
