@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot --progress --colors",
-    "build": "webpack --hot --progress --colors"
+    "build": "webpack --hot --progress --colors",
+    "deploy": "npm run build && parse deploy"
   },
   "repository": {
     "type": "git",

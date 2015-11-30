@@ -28,3 +28,35 @@
 
 }
 
+.messages-list-container {
+
+  .message {
+
+    padding-top: 10px;
+
+    .message-timestamp {
+      text-align: center;
+      color: $text-muted;
+    }
+
+    .message-text {
+
+    }
+
+    .message-image {
+
+    }
+  }
+
+  .message-reply {
+    .message-text {
+      text-align: right;
+    }
+  }
+
+  .message-incoming {
+    .message-text {
+      text-align: left;
+    }
+  }
+}
