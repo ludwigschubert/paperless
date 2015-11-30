@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .patron-avatar-list-container {
 
   background-color: $background-color-dark;
@@ -42,6 +46,10 @@
 }
 
 .messages-list-container {
+
+  height: 640px;
+  overflow: auto;
+  padding-bottom: 20px;
 
   .message {
 
