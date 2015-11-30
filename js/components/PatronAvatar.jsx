@@ -23,7 +23,7 @@ let PatronAvatar = React.createClass({
     return(
       <li className={liClass} onClick={this.selectPatron}>
         <OverlayTrigger placement="bottom" overlay={tooltip}>
-          <Image circle responsive className='patron-avatar-image' src={patron.avatarUrl}/>
+          <Image circle responsive className='patron-avatar-image' src={patron.avatarUrl || "http://jetsrant.com/wp-content/uploads/2012/03/anonymous_person-200x200.jpg"}/>
         </OverlayTrigger>
       </li>
     );
