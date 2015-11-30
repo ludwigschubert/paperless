@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "Paperless": {
+      "applicationId": "pQQfaP06YQuGXsbXDRrPMOLFxBvOSpCIU0EmdwYe"
+    },
+    "_default": {
+      "link": "Paperless"
+    }
+  }
+}
