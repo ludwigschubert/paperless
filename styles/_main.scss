@@ -22,6 +22,19 @@
       span {
         display: inline-block;
       }
+
+    }
+
+    .selected::after {
+      position: absolute;
+      content: "";
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+      width:8px;
+      height:8px;
+      background-color: white;
+      display: inline-block;
     }
 
   }
@@ -37,10 +50,29 @@
     .message-timestamp {
       text-align: center;
       color: $text-muted;
+      padding: $padding-base-vertical
+               $padding-base-horizontal
+               $padding-base-vertical * 2
+               $padding-base-horizontal;
     }
 
     .message-text {
+      width: 50%;
 
+      span {
+        display: inline-block;
+
+        /* Rounded corners with padding */
+        border-radius: 10px;
+        padding: $padding-base-vertical
+                 $padding-base-horizontal
+                 $padding-base-vertical
+                 $padding-base-horizontal;
+
+        /* Coloring */
+        background-color: #DFDEE5;
+        color: black;
+      }
     }
 
     .message-image {
@@ -49,8 +81,28 @@
   }
 
   .message-reply {
+
     .message-text {
+
+      /* Alignment */
+      width: 50%;
+      margin-left: 50%;
       text-align: right;
+
+      span {
+        display: inline-block;
+
+        /* Rounded corners with padding */
+        border-radius: 10px;
+        padding: $padding-base-vertical
+                 $padding-base-horizontal
+                 $padding-base-vertical
+                 $padding-base-horizontal;
+
+        /* Coloring */
+        background-color: #31ABE0;
+        color: white;
+      }
     }
   }
 

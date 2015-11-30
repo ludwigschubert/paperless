@@ -8,7 +8,7 @@ let Message = React.createClass({
 
     var text;
     if (message.text) {
-      text = <div className="message-text">{message.text}</div>;
+      text = <div className="message-text"><span>{message.text}</span></div>;
     }
 
     var image;
