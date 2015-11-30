@@ -37,13 +37,22 @@ Parse.Cloud.afterSave("Message", function(request, response) {
     }
   });
 
-  // Include the Twilio Cloud Module and initialize it
-  twilio.initialize("ACdadc5e160dcf3b90e6ecdd1c0799c3ab","2f87472519ba1224f9376fdc0b1fb1c7");
-
-  twilio.sendSMS({
-    From: "+16503979734",
-    To: message.patron.phoneNumber,
-    Body: message.text
+  if (message.get("isReply")) {
+    query = new Parse.Query("Patron");
+    query.get(message.get("patron").id, {
+      success: function(patron) {
+        twilio.initialize("ACdadc5e160dcf3b90e6ecdd1c0799c3ab","2f87472519ba1224f9376fdc0b1fb1c7");
+        twilio.sendSMS({
+          From: "+16503979734",
+          To: patron.get("phoneNumber"),
+          Body: message.get("text")
+        })
+        console.log("Sent Message via Twilio!");
+      },
+      error: function(error) {
+        console.error("Got an error " + error.code + " : " + error.message);
+      }
+    });
   }
 
 });
