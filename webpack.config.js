@@ -6,6 +6,7 @@ module.exports = {
   entry: [
     'webpack/hot/only-dev-server',
     './js/index.jsx',
+    'bootstrap-sass!./styles/bootstrap-sass.config.js'
   ],
 
   output: {
@@ -21,9 +22,9 @@ module.exports = {
         loaders: ["react-hot", "babel-loader"],
       },
       {
-        test: /\.css$/,
-        loader: 'style!css',
-      },
+          test: /\.s(c|a)ss$/,
+          loaders: ["style", "css?sourceMap", "sass?sourceMap"]
+      }
     ]
   },
 
@@ -32,6 +33,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html' // simply copies our index.html file to output directory
     })
-  ]
+  ],
 
 };

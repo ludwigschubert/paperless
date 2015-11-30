@@ -1,6 +1,7 @@
 import React from 'react';
 import Parse from 'parse';
 import ParseReact from 'parse-react';
+import { Row, Col } from 'react-bootstrap';
 
 import PatronAvatar from './PatronAvatar.jsx';
 
@@ -16,15 +17,17 @@ let PatronsList = React.createClass({
   render() {
     const callback = this.props.selectPatronCallback
     return(
-      <div className='patrons-list-container'>
-        <ul className='patrons-list'>
-          {this.data.patrons.map(function(patron) {
-            return <PatronAvatar key={patron.objectId}
-                                 patron={patron}
-                                 selectPatronCallback={callback} />;
-          })}
-        </ul>
-      </div>
+      <Row className='patron-avatar-list-container'>
+        <Col sm={12}>
+          <ul className='patron-avatar-list'>
+            {this.data.patrons.map(function(patron) {
+              return <PatronAvatar key={patron.objectId}
+                                   patron={patron}
+                                   selectPatronCallback={callback} />;
+            })}
+          </ul>
+        </Col>
+      </Row>
     );
 
   }

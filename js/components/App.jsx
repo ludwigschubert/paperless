@@ -1,9 +1,16 @@
 import React from 'react';
-// import { Link } from 'react-router';
+import { Grid } from 'react-bootstrap';
 
-// Simply render all children
-export default React.createClass({
-  render: function() {
-    return React.cloneElement(this.props.children);
+let App = React.createClass({
+
+  render() {
+    return(
+      <Grid fluid>
+        {React.cloneElement(this.props.children)}
+      </Grid>
+    );
   }
+
 });
+
+export default App;
