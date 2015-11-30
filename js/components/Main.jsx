@@ -9,7 +9,7 @@ let Main = React.createClass({
     return {selectedPatron: null};
   },
 
-  selectPatron: function(patron) {
+  _selectPatron: function(patron) {
     this.setState({selectedPatron: patron});
   },
 
@@ -25,7 +25,7 @@ let Main = React.createClass({
 
     return(
       <div id="main">
-        <PatronsList selectPatronCallback={this.selectPatron}/>
+        <PatronsList selectPatronCallback={this._selectPatron} selectedPatron={selectedPatron}/>
         {mainBody}
       </div>
     );

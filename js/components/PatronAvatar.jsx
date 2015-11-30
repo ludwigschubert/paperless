@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tooltip, OverlayTrigger, Image } from 'react-bootstrap';
+import classNames from 'classnames';
 
 let PatronAvatar = React.createClass({
 
@@ -14,8 +15,13 @@ let PatronAvatar = React.createClass({
       <Tooltip id={patron.objectId}><strong>{patron.name}</strong></Tooltip>
     );
 
+    const liClass = classNames({
+      'patron-avatar-list-item': true,
+      'selected': this.props.isSelected
+    });
+
     return(
-      <li className='patron-avatar-list-item' onClick={this.selectPatron}>
+      <li className={liClass} onClick={this.selectPatron}>
         <OverlayTrigger placement="bottom" overlay={tooltip}>
           <Image circle responsive className='patron-avatar-image' src={patron.avatarUrl}/>
         </OverlayTrigger>

@@ -37,6 +37,7 @@ let PatronsList = React.createClass({
 
   render() {
     const callback = this.props.selectPatronCallback
+    const selectedPatron = this.props.selectedPatron
     return(
       <Row className='patron-avatar-list-container'>
         <Col sm={12}>
@@ -44,7 +45,8 @@ let PatronsList = React.createClass({
             {this.data.patrons.map(function(patron) {
               return <PatronAvatar key={patron.objectId}
                                    patron={patron}
-                                   selectPatronCallback={callback} />;
+                                   selectPatronCallback={callback}
+                                   isSelected={selectedPatron && selectedPatron.objectId == patron.objectId} />;
             })}
           </ul>
         </Col>
