@@ -1,3 +1,5 @@
+@import 'circle';
+
 $patron-avatar-list-height: 64px;
 $messages-creator-height: 55px;
 $messages-header-height: 40px;
@@ -169,4 +171,10 @@ body {
     padding-right: 10px;
   }
 
+}
+
+.patron-details {
+  .patron-avatar-image {
+    margin-top: 20px;
+  }
 }
