@@ -13,7 +13,12 @@ app.use(express.bodyParser());    // Middleware for reading request body
 app.post('/sms', function(req, response) {
   var text = req.body.Body;
   var fromPhoneNumber = req.body.From;
-
+  const NumMedia = req.body.NumMedia;
+  var mediaUrl;
+  if (NumMedia > 0) {
+    console.log("Message has Media!")
+    mediaUrl = req.body.MediaUrl0;
+  }
 
   var patron;
   var query = new Parse.Query("Patron");
@@ -51,6 +56,7 @@ app.post('/sms', function(req, response) {
           var message = new MessageClass();
           message.set("text", text);
           message.set("patron", patron);
+          message.set("imageUrl", mediaUrl);
           message.set("isReply", false);
           message.save(null, {
               success: function (message) {
