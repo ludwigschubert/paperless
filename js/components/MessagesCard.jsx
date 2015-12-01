@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 
 import MessagesList from './MessagesList.jsx';
 import MessagesCreator from './MessagesCreator.jsx';
-
+import MessagesHeading from './MessagesHeading.jsx';
 
 let MessagesCard = React.createClass({
 
@@ -13,6 +13,7 @@ let MessagesCard = React.createClass({
     const patron = this.props.patron;
     return(
       <Col sm={6} className='messages-list'>
+        <Row> <MessagesHeading patron={patron}/> </Row>
         <Row> <MessagesList patron={patron}/> </Row>
         <Row> <MessagesCreator patron={patron}/> </Row>
       </Col>
