@@ -1,4 +1,5 @@
 import React from 'react';
+import Time from 'react-time'
 import { Image, Col, Row } from 'react-bootstrap';
 
 let Message = React.createClass({
@@ -25,7 +26,7 @@ let Message = React.createClass({
     return(
       <div className={"message " + messageClass}>
         <div className="message-timestamp">
-          {message.createdAt.toString()}
+          <Time value={message.createdAt} titleFormat="YYYY/MM/DD HH:mm:ss" relative />
         </div>
         {text}
         {image}
