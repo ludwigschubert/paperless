@@ -11,9 +11,7 @@ let PatronAvatar = React.createClass({
   render() {
     const patron = this.props.patron;
 
-    const tooltip = (
-      <Tooltip id={patron.objectId}><strong>{patron.name}</strong></Tooltip>
-    );
+    const tooltip = <Tooltip id={patron.objectId}><strong>{patron.name || "Unknown Patron"}</strong></Tooltip>;
 
     const liClass = classNames({
       'patron-avatar-list-item': true,
@@ -23,7 +21,7 @@ let PatronAvatar = React.createClass({
     return(
       <li className={liClass} onClick={this.selectPatron}>
         <OverlayTrigger placement="bottom" overlay={tooltip}>
-          <Image circle responsive className='patron-avatar-image' src={patron.avatarUrl || "http://jetsrant.com/wp-content/uploads/2012/03/anonymous_person-200x200.jpg"}/>
+          <Image circle responsive className='patron-avatar-image' src={patron.avatarUrl || require('../../img/patron@2x.png')}/>
         </OverlayTrigger>
       </li>
     );

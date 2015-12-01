@@ -24,6 +24,10 @@ module.exports = {
       {
           test: /\.s(c|a)ss$/,
           loaders: ["style", "css?sourceMap", "sass?sourceMap"]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: "file-loader?name=img/img-[hash:6].[ext]"
       }
     ]
   },
