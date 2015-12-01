@@ -34,9 +34,14 @@ let MessagesList = React.createClass({
     });
   },
 
+  componentDidUpdate: function() {
+    var element = document.getElementById("messages-list-container");
+    element.scrollTop = element.scrollHeight;
+  },
+
   render() {
     return(
-      <Col sm={12} className="messages-list-container">
+      <Col sm={12} className="messages-list-container" id="messages-list-container">
         {this.data.messages.map( function(message) {
           return <Message key={message.objectId || "new"} message={message}/>;
         })}
