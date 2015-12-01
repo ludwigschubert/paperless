@@ -9,9 +9,9 @@ import Message from './Message.jsx'
 let MessagesList = React.createClass({
   mixins: [ParseReact.Mixin], // Enable query subscriptions
 
-  observe: function() {
+  observe: function(props, state) {
     return {
-      messages: (new Parse.Query('Message')).equalTo('patron', this.props.patron).ascending('createdAt')
+      messages: (new Parse.Query('Message')).equalTo('patron', props.patron).ascending('createdAt')
     };
   },
 
