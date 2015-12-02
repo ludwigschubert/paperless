@@ -2,10 +2,13 @@ import React from 'react';
 import Time from 'react-time'
 import { Image, Col, Row } from 'react-bootstrap';
 
+import MessageTaskSuggestion from './MessageTaskSuggestion.jsx';
+
 let Message = React.createClass({
 
   render() {
     const message = this.props.message;
+    const patron  = this.props.patron;
 
     var text;
     if (message.text) {
@@ -21,6 +24,15 @@ let Message = React.createClass({
       </Row>
     }
 
+    var taskSuggestion;
+    if (!message.isReply) {
+      if (message.text.indexOf("apply") > -1) {
+        taskSuggestion = <MessageTaskSuggestion task="apply" patron={patron} />
+      } else if (message.text.indexOf("renew") > -1) {
+        taskSuggestion = <MessageTaskSuggestion task="renew" patron={patron} />
+      }
+    }
+    
     const messageClass = message.isReply ? "message-reply" : "message-incoming";
 
     return(
@@ -30,6 +42,7 @@ let Message = React.createClass({
         </div>
         {text}
         {image}
+        {taskSuggestion}
       </div>
     );
 

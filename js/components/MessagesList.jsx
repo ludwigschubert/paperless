@@ -4,7 +4,7 @@ import ParseReact from 'parse-react';
 import PUBNUP from 'pubnub';
 
 import { Col } from 'react-bootstrap';
-import Message from './Message.jsx'
+import Message from './Message.jsx';
 
 let MessagesList = React.createClass({
   mixins: [ParseReact.Mixin], // Enable query subscriptions
@@ -40,10 +40,12 @@ let MessagesList = React.createClass({
   },
 
   render() {
+    const patron = this.props.patron;
+
     return(
       <Col sm={12} className="messages-list-container" id="messages-list-container">
         {this.data.messages.map( function(message) {
-          return <Message key={message.objectId || "new"} message={message}/>;
+          return <Message key={message.id || "new"} message={message} patron={patron}/>;
         })}
       </Col>
     );
