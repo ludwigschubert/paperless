@@ -1,6 +1,7 @@
 @import 'circle';
 
 $patron-avatar-list-height: 64px;
+$patron-details-height: 204px;
 $messages-creator-height: 55px;
 $messages-header-height: 40px;
 
@@ -57,7 +58,6 @@ body {
   height: calc(100vh - #{$patron-avatar-list-height} - #{$messages-creator-height} - #{$messages-header-height} - 5px);
   padding-bottom: 10px;
   overflow: auto;
-
 
   .message {
 
@@ -131,7 +131,7 @@ body {
 }
 
 .messages-list {
-  border-right: 1px #ddd solid;
+  border-right: 1px rgba(0, 0, 0, .30) solid;
 }
 
 .messages-creator-container {
@@ -139,7 +139,7 @@ body {
   padding-bottom: 10px;
   background-color: rgba(255, 255, 255, 0.75);
   border-top: 1px #ddd solid;
-  border-right: 1px #ddd solid;
+  border-right: 1px rgba(0, 0, 0, .30) solid;
 
   position: fixed;
   height: $messages-creator-height;
@@ -183,9 +183,20 @@ body {
 
 }
 
-.patron-details {
+.patron-card {
+
+  .patron-details {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .btn-edit {
+      margin-top: 20px;
+    }
+  }
+
   .patron-avatar-image {
-    margin-top: 20px;
+    // margin-top: 20px;
+    border: 1px #ddd solid
   }
 }
 
@@ -209,6 +220,10 @@ body {
     display: inline-block;
     opacity: 0.3;
   }
+
+  .buttonIcon {
+    margin-left: 10px;
+  }
 }
 
 .suggestion-icon {
@@ -217,3 +232,29 @@ body {
   padding-top: 10px;
   margin-right: 10px;
 }
+
+.row-separator {
+  height: $messages-header-height;
+  padding: 10px;
+  border-bottom: 1px #ddd solid;
+}
+
+.row-separator-middle {
+  border-top: 1px #ddd solid;
+}
+
+.tasks-list-container {
+
+  height: calc(100vh - #{$patron-avatar-list-height} - #{$patron-details-height} - 2*#{$messages-header-height});
+  overflow: auto;
+  padding-top: 10px;
+
+  .panel-heading-extra {
+    float: right !important;
+    font-weight: normal;
+  }
+
+}
+
+
+

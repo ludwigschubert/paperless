@@ -29,17 +29,17 @@ module.exports = {
   // 'css-loader!sass?outputStyle=expanded'),
 
   scripts: {
-    'transition': false,
+    'transition': true,
     'alert': false,
     'button': false,
     'carousel': false,
-    'collapse': false,
-    'dropdown': false,
+    'collapse': true,
+    'dropdown': true,
     'modal': false,
     'tooltip': false,
     'popover': false,
     'scrollspy': false,
-    'tab': false,
+    'tab': true,
     'affix': false
   },
   styles: {
