@@ -19,8 +19,6 @@ let Main = React.createClass({
     var mainBody;
     if (selectedPatron) {
       mainBody = <PatronBody patron={selectedPatron}/>
-    } else {
-      mainBody = <p>No Patron Selected</p>
     }
 
     return(

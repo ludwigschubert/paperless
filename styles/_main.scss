@@ -5,6 +5,12 @@ $patron-details-height: 204px;
 $messages-creator-height: 55px;
 $messages-header-height: 40px;
 
+html {
+  background: url( '../img/login@2x.jpg' ) no-repeat center top;
+  min-height: 100% !important;
+  background-size: cover;
+}
+
 body {
   overflow: hidden;
 }
@@ -12,6 +18,15 @@ body {
 .patron-avatar-list-container {
 
   background-color: $background-color-dark;
+  background: url( '../img/login@2x.jpg' ) no-repeat center center;
+  background-position-y: top;
+  background-size: cover;
+
+  .logo {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+  }
 
   .patron-avatar-list {
 
@@ -26,6 +41,7 @@ body {
       display: inline-block;
       height: 64px;
       width: 64px;
+      cursor: pointer;
 
       img {
         display: inline-block;

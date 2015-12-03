@@ -3,7 +3,7 @@ import Parse from 'parse';
 import ParseReact from 'parse-react';
 import PUBNUP from 'pubnub';
 
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Image } from 'react-bootstrap';
 
 import PatronAvatar from './PatronAvatar.jsx';
 
@@ -49,6 +49,7 @@ let PatronsList = React.createClass({
                                    isSelected={selectedPatron && selectedPatron.objectId == patron.objectId} />;
             })}
           </ul>
+          <Image className="logo" src={require("../../img/logo@2x.png")} height="44" />
         </Col>
       </Row>
     );

@@ -5,7 +5,11 @@ import classNames from 'classnames';
 let PatronAvatar = React.createClass({
 
   selectPatron: function() {
-    this.props.selectPatronCallback(this.props.patron);
+    if (this.props.isSelected) {
+      this.props.selectPatronCallback(null);
+    } else {
+      this.props.selectPatronCallback(this.props.patron);
+    }
   },
 
   render() {

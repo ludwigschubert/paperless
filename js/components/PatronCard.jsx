@@ -33,6 +33,7 @@ let PatronCard = React.createClass({
         </Row>
 
         <Collapse in={this.state.patronDetailsActive}>
+          <div>
           <Row className="patron-details">
 
             <Col sm={3} md={3}>
@@ -92,17 +93,12 @@ let PatronCard = React.createClass({
 
             </Col>
           </Row>
+          </div>
         </Collapse>
 
         <Row className="row-separator row-separator-middle" onClick={this._toggleTaskList}>
           <span>Patron Tasks</span>
           <ButtonToolbar className="pull-right">
-            <Button className="btn-xs">
-              Filter
-            </Button>
-            <Button className="btn-xs">
-              Edit
-            </Button>
           </ButtonToolbar>
         </Row>
 
