@@ -37,7 +37,8 @@ let MessagesCreator = React.createClass({
   //     }
   // },
 
-  _sendMessage: function() {
+  _sendMessage: function(event) {
+    event.preventDefault();
     const element = document.getElementById("messages-creator-input");
     const text = element.value;
     ParseReact.Mutation.Create('Message', {
@@ -47,8 +48,6 @@ let MessagesCreator = React.createClass({
     }).dispatch();
 
     this.setState({ text: '' });
-
-    return false;
   },
 
   _validationState: function() {

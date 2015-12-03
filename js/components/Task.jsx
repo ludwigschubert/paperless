@@ -11,13 +11,14 @@ let Task = React.createClass({
     const heading = task.type == "apply" ? "Application for a driver license" : "Driver license renewal";
     const header = (<h4>
       {heading}
+      {task.isComplete ? " (complete)" : ''}
       <span className="panel-heading-extra text-muted">
         <Time value={task.createdAt} titleFormat="YYYY/MM/DD HH:mm:ss" relative />
       </span>
     </h4>);
 
     return(
-      <Panel collapsible defaultExpanded header={header}>
+      <Panel collapsible defaultExpanded={!task.isComplete} header={header}>
         <ProgressBar>
           <ProgressBar  bsStyle="success" now={35} key={1} />
           <ProgressBar striped bsStyle="warning" now={20} key={2} />

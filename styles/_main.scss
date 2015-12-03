@@ -188,6 +188,7 @@ body {
   .patron-details {
     padding-top: 10px;
     padding-bottom: 10px;
+    border-bottom: 1px #ddd solid;
 
     .btn-edit {
       margin-top: 20px;
@@ -237,15 +238,12 @@ body {
   height: $messages-header-height;
   padding: 10px;
   border-bottom: 1px #ddd solid;
-}
-
-.row-separator-middle {
-  border-top: 1px #ddd solid;
+  cursor: pointer;
 }
 
 .tasks-list-container {
 
-  height: calc(100vh - #{$patron-avatar-list-height} - #{$patron-details-height} - 2*#{$messages-header-height});
+  height: calc(100vh - #{$patron-avatar-list-height} - 2*#{$messages-header-height});
   overflow: auto;
   padding-top: 10px;
 
